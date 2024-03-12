@@ -5,8 +5,41 @@ The PunjabiStemmer introduces a groundbreaking advancement in Natural Language P
 Featuring over 300 suffix rules and a comprehensive database of over 50,000 words, the stemmer excels in handling various grammatical scenarios while preserving semantic integrity. This hybrid approach allows for meticulous processing across nouns, pronouns, adjectives, adverbs, verbs, and more, maintaining the essence of words and supporting diverse NLP applications.
 
 Now available on PyPI, PunjabiStemmer is a monumental leap in text processing for regional languages, inviting collaboration and innovation in the field.
+This Punjabi Stemmer was developed by Gurpej Singh, a researcher dedicated to advancing Natural Language Processing for Punjabi, as part of his research work. 
+## Main Features
 
-Rules Of Punjabi Stemmer Given in Organized Manner according to Length wise and Longest to Small and putted in organized way for better accuracy and efficient stemming
+The Punjabi_Stemmer package offers several functionalities, including:
+1. Identifying Punjabi stopwords in text.
+2. Removing Punjabi stopwords from text.
+3. Adding custom stopwords to the existing list.
+
+## Install the Package
+
+You can install Punjabi_Stemmer directly from PyPI
+
+## Installation
+
+Install `Punjabi_Stemmer` using pip:
+
+```python
+pip install Punjabi_stemmer
+```
+# Usage
+Here's how to use the Punjabi_Stemmer Package in your Python projects:
+
+## Check root word for single word
+
+## Rules Overview
+In the development of the PunjabiStemmer, one of our core objectives was to create a highly accurate and versatile tool capable of navigating the rich morphological landscape of the Punjabi language. To achieve this, we have meticulously developed and implemented an expansive set of rules that serve as the foundation of our stemming process.
+
+The PunjabiStemmer incorporates over 300 specific rules, designed to accurately process a wide array of grammatical scenarios. These rules are meticulously categorized to address different aspects of the language, including but not limited to, proper nouns and names, pronouns, verbs, adverbs, and adjectives. This structured approach allows the stemmer to precisely identify and handle the morphological nuances of Punjabi, significantly reducing errors related to overstemming and understemming.
+
+Our research paper details about 160 of these rules, showcasing their application across various linguistic categories. To ensure comprehensive understanding and transparency, we've included the entire rule set in this README. This allows for a deeper dive into the methodology behind our stemmer, which boasts a remarkable 92.5% accuracy rate.
+
+The rules are thoughtfully crafted and arranged from longest to smallest, optimizing both accuracy and efficiency in stemming. This organization reflects our meticulous approach to handling the complexities of Punjabi morphology.
+
+We encourage users and developers to explore this detailed compilation of rules. It highlights the PunjabiStemmer's effectiveness and our dedication to advancing the field of Punjabi language processing.
+
 ```python
 {"match": "ਪ੍ਰਰਸਤੀ", "strip": "ਪ੍ਰਰਸਤੀ", "add": ""},
 {"match": "ਪੂਰਵਕ", "strip": "ਪੂਰਵਕ", "add": ""},
@@ -304,3 +337,8 @@ Rules Of Punjabi Stemmer Given in Organized Manner according to Length wise and 
 {"match": "ੋਂ", "strip": "ੋਂ", "add": ""},
 {"match": "ੋ ਂ", "strip": "ੋ ਂ", "add": ""}
 ```
+## Contributing
+Contributions to punjabi_stopwords are welcome! If you have suggestions for additional stopwords, or improvements to the existing list, please feel free to contribute.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
