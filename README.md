@@ -23,12 +23,24 @@ Install `Punjabi_Stemmer` using pip:
 ```python
 pip install Punjabi_stemmer
 ```
+### Other package requirement
+```python
+pip install re
+pip install os
+pip install collections
+```
+
 # Usage
 Here's how to use the Punjabi_Stemmer Package in your Python projects:
 
 ## Stemming a Single Word
 To stem a single Punjabi word, use the stem_word method:
 ```python
+from Punjabi_Stemmer.Stemmer import PunjabiStemmer
+
+# Now you can simply initialize the stemmer without specifying file paths
+stemmer = PunjabiStemmer()
+
 word = "ਭੱਜਣਾ"  # Example Punjabi word
 stemmed_word = stemmer.stem_word(word)
 print(f"Original: {word}, Stemmed: {stemmed_word}")
@@ -43,6 +55,11 @@ This will print the original word and its stemmed version.
 ## Stemming a Sentence or Paragraph
 To stem a longer piece of text, such as a sentence or paragraph, use the stem_text method:
 ```python
+from Punjabi_Stemmer.Stemmer import PunjabiStemmer
+
+# Now you can simply initialize the stemmer without specifying file paths
+stemmer = PunjabiStemmer()
+
 text = "ਪੜਾਉਂਦਾ ਪੜਾਉਂਦੀ ਪੜਾਉਂਦੇ  ਪੜਾਉਣੀਆਂ  ਪੜਾਉਣੀ  ਪੜਾਉਣੇ ਪੜਾਂਦਾ ਪੜਾਂਦੀ"
 stemmed_text = stemmer.stem_text(text)
 print(f"Original: {text}\nStemmed: {stemmed_text}")
@@ -58,6 +75,11 @@ This will output the original text and the stemmed version.
 ## Stemming Content from a Text File
 To process text from a file, ensuring all the content is automatically preprocessed and stemmed, then outputted to another file, you can use the stem_file method:
 ```python
+from Punjabi_Stemmer.Stemmer import PunjabiStemmer
+
+# Now you can simply initialize the stemmer without specifying file paths
+stemmer = PunjabiStemmer()
+
 input_file_path = 'path/to/your/input.txt'  # Path to your input file
 output_file_path = 'path/to/your/output.txt'  # Path where you want to save the output
 
