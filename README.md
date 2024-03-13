@@ -9,11 +9,10 @@ This Punjabi Stemmer was developed by Gurpej Singh, a researcher dedicated to ad
 ## Main Features
 
 The Punjabi_Stemmer package offers several functionalities, including:
-1. Identifying Punjabi stopwords in text.
-2. Removing Punjabi stopwords from text.
-3. Adding custom stopwords to the existing list.
+1. Stemming single word for testing.
+2. Stemming a Sentence or Paragraph.
+3. Stemming Content from a Large Text File.
 
-## Install the Package
 
 You can install Punjabi_Stemmer directly from PyPI
 
@@ -27,7 +26,108 @@ pip install Punjabi_stemmer
 # Usage
 Here's how to use the Punjabi_Stemmer Package in your Python projects:
 
-## Check root word for single word
+## Stemming a Single Word
+To stem a single Punjabi word, use the stem_word method:
+```python
+word = "ਭੱਜਣਾ"  # Example Punjabi word
+stemmed_word = stemmer.stem_word(word)
+print(f"Original: {word}, Stemmed: {stemmed_word}")
+
+```
+Output
+```
+ਭੱਜ
+```
+This will print the original word and its stemmed version.
+
+## Stemming a Sentence or Paragraph
+To stem a longer piece of text, such as a sentence or paragraph, use the stem_text method:
+```python
+text = "ਪੜਾਉਂਦਾ ਪੜਾਉਂਦੀ ਪੜਾਉਂਦੇ  ਪੜਾਉਣੀਆਂ  ਪੜਾਉਣੀ  ਪੜਾਉਣੇ ਪੜਾਂਦਾ ਪੜਾਂਦੀ"
+stemmed_text = stemmer.stem_text(text)
+print(f"Original: {text}\nStemmed: {stemmed_text}")
+
+```
+Output
+```
+ਪੜਾ ਪੜਾ ਪੜਾ ਪੜਾ ਪੜਾ ਪੜਾ ਪੜਾ ਪੜਾ
+```
+This will output the original text and the stemmed version.
+
+
+## Stemming Content from a Text File
+To process text from a file, ensuring all the content is automatically preprocessed and stemmed, then outputted to another file, you can use the stem_file method:
+```python
+input_file_path = 'path/to/your/input.txt'  # Path to your input file
+output_file_path = 'path/to/your/output.txt'  # Path where you want to save the output
+
+# Stem the content of the input file and save it to the output file
+stemmer.stem_file(input_file_path, output_file_path)
+
+```
+Output
+```
+Processed text has been saved to D:/output.txt
+```
+Make sure the input file exists at the specified path; otherwise, you'll receive an error message.
+
+These steps provide a comprehensive guide on how to use the Punjabi Stemmer package from basic to more advanced use cases, including processing individual words, text, and files. This should cover most needs users might have when working with Punjabi text data.
+
+## Punjabi Stemmer Algorithm
+```python
+Algorithm:Punjabi Stemmer Algorithm
+ Initialization: Load lists (pronouns, adverbs, post-positions, vocabulary, names, suﬀixes) and dictionary
+(alphabetically organized).
+ Input Processing: Split text into words.
+ for word in words do
+ List Category Checking:
+ if len(word) = 1 then
+ output(word)
+ continue
+ end if
+ if word_in_lists(word, pronouns, adverbs, postposi-tions, vocabulary, names, suﬀixes) then
+ output(word)
+ continue
+ end if
+ Apply Suﬀix Rule:
+ if suﬀix_rule_matches(word) then
+ stemmed_word ← apply_suﬀix_rule(word)
+ else
+ output(word) {Return word as it is if suﬀix rule does not match}
+ continue
+ end if
+ Single-Character Check:
+ if len(stemmed_word) = 1 then
+ output(word) {Output original word if stemming results in single character}
+ continue
+ end if
+ Dictionary Validation and Further Stemming:
+ if validate_in_dictionary(stemmed_word) then
+ output(stemmed_word)
+ else
+ if validate_in_dictionary(word) then
+ stemmed_word ← word {Revert to original if
+it’s valid}
+ while not all_rules_applied() do
+ stemmed_word ← apply_next_suﬀix_rule(stemmed_word)
+ if validate_in_dictionary(stemmed_word)
+then
+ output(stemmed_word) {Valid stemmed
+word found}
+ break
+ end if
+ end while
+ if not validate_in_dictionary(stemmed_word)
+then
+ output(word) {Return original word if no valid stem is found}
+ end if
+ else
+ output(stemmed_word) {Return stemmed word if original is not valid}
+ end if
+ end if
+ end for=0
+## Install the Package
+```
 
 ## Rules Overview
 In the development of the PunjabiStemmer, one of our core objectives was to create a highly accurate and versatile tool capable of navigating the rich morphological landscape of the Punjabi language. To achieve this, we have meticulously developed and implemented an expansive set of rules that serve as the foundation of our stemming process.
