@@ -7,14 +7,15 @@ setup(
     name='punjabi_stemmer',  # Package name
     version='1.0.0',  # Initial version
     packages=find_packages(),  # Automatically find and include all packages
-    description='A Python library for stemming Punjabi language words, including preprocessing for noise removal.',
+    description='A Python library for stemming Punjabi language words, including preprocessing for noise removal.Our stemmer is meticulously crafted to handle the rich morphological variations in Punjabi, offering accurate stemming through an extensive set of rules tailored to the language's specific characteristics. It addresses various grammatical scenarios, including proper nouns, pronouns, verbs, adverbs, adjectives, and more, ensuring a comprehensive understanding and processing of text.',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    author='Gurpej Singh',  # Your name
-    author_email='gurpejsingh462@gmail.com',  # Your email
+    author='Gurpej Singh',  
+    author_email='gurpejsingh462@gmail.com',  
     url='https://github.com/gurpejsingh13/Punjabi_Stemmer.git',  # Replace with your repository URL
     license='MIT',
-    keywords=['stemmer', 'punjabi', 'nlp', 'punjabi language', 'natural language processing', 'text processing', 'noise removal'],
+    keywords=['stemmer', 'punjabi', 'nlp', 'punjabi language', 'Gurmukhi Lanuae', natural language processing', 'text processing', 'noise removal', 'Stemming',
+    'Brute Force Algorithm', 'Suffix Striping', 'Under-stemming', 'Over-stemming', 'Stemming Algorithm'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
