@@ -14,7 +14,7 @@ setup(
     author_email='gurpejsingh462@gmail.com',  
     url='https://github.com/gurpejsingh13/Punjabi_Stemmer.git',  # Replace with your repository URL
     license='MIT',
-    keywords=['stemmer', 'punjabi', 'nlp', 'punjabi language', 'Gurmukhi Lanuae', natural language processing', 'text processing', 'noise removal', 'Stemming',
+    keywords=['stemmer', 'punjabi', 'nlp', 'punjabi language', 'Gurmukhi Language', natural language processing', 'text processing', 'noise removal', 'Stemming',
     'Brute Force Algorithm', 'Suffix Striping', 'Under-stemming', 'Over-stemming', 'Stemming Algorithm'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
