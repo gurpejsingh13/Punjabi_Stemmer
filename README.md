@@ -17,17 +17,16 @@ The Punjabi_Stemmer package offers several functionalities, including:
 You can install Punjabi_Stemmer directly from PyPI
 
 ## Installation
-
+Before installing Punjabi Stemmer, ensure you have Python 3.7 or newer installed on your system. Punjabi Stemmer also require some other libraries installation:
+```python
+pip install regex
+pip install os-sys
+pip install collection
+```
 Install `Punjabi_Stemmer` using pip:
 
 ```python
 pip install Punjabi_stemmer
-```
-### Other package requirement
-```python
-pip install re
-pip install os
-pip install collections
 ```
 
 # Usage
@@ -97,58 +96,39 @@ These steps provide a comprehensive guide on how to use the Punjabi Stemmer pack
 
 ## Punjabi Stemmer Algorithm
 ```python
-Algorithm:Punjabi Stemmer Algorithm
- Initialization: Load lists (pronouns, adverbs, post-positions, vocabulary, names, suﬀixes) and dictionary
-(alphabetically organized).
- Input Processing: Split text into words.
- for word in words do
- List Category Checking:
- if len(word) = 1 then
- output(word)
- continue
- end if
- if word_in_lists(word, pronouns, adverbs, postposi-tions, vocabulary, names, suﬀixes) then
- output(word)
- continue
- end if
- Apply Suﬀix Rule:
- if suﬀix_rule_matches(word) then
- stemmed_word ← apply_suﬀix_rule(word)
- else
- output(word) {Return word as it is if suﬀix rule does not match}
- continue
- end if
- Single-Character Check:
- if len(stemmed_word) = 1 then
- output(word) {Output original word if stemming results in single character}
- continue
- end if
- Dictionary Validation and Further Stemming:
- if validate_in_dictionary(stemmed_word) then
- output(stemmed_word)
- else
- if validate_in_dictionary(word) then
- stemmed_word ← word {Revert to original if
-it’s valid}
- while not all_rules_applied() do
- stemmed_word ← apply_next_suﬀix_rule(stemmed_word)
- if validate_in_dictionary(stemmed_word)
-then
- output(stemmed_word) {Valid stemmed
-word found}
- break
- end if
- end while
- if not validate_in_dictionary(stemmed_word)
-then
- output(word) {Return original word if no valid stem is found}
- end if
- else
- output(stemmed_word) {Return stemmed word if original is not valid}
- end if
- end if
- end for=0
-## Install the Package
+Step 1: Initialization
+
+Load lists of pronouns, adverbs, post-positions, vocabulary, names, and suffixes.
+Load the dictionary, organized alphabetically.
+
+Step 2: Input Processing
+
+Split the input text into individual words.
+For each word in the split text:
+
+Step 3: List Category Checking
+
+a. If the length of the word is 1, output the word and move to the next one.
+b. If the word is found in any loaded list (pronouns, adverbs, postpositions, vocabulary, names, suffixes), output the word and move to the next one.
+
+Step 4: Apply Suffix Rule
+
+a. If a suffix rule matches, apply it to stem the word.
+b. If no suffix rule matches, output the original word and continue.
+
+Step 5: Single-Character Check
+
+If the length of the stemmed word is 1, output the original word and continue.
+
+Step 6: Dictionary Validation and Further Stemming
+
+a. If the stemmed word is validated in the dictionary, output the stemmed word.
+b. If the stemmed word is not validated but the original word is:
+i. Apply further suffix rules iteratively to the original word.
+ii. If a valid stemmed word is found during iteration, output it.
+iii. If no valid stem is found after all iterations, output the original word.
+c. If neither the stemmed word nor the original word is validated in the dictionary, output the stemmed word.
+
 ```
 
 ## Rules Overview
